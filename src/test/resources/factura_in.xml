@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprobante" version="1.0.0">
+ <infoTributaria>
+	<ambiente>1</ambiente>
+	<tipoEmision>1</tipoEmision>
+	<razonSocial>Distribuidora de Suministros Naciona S.A</razonSocial>
+	<nombreComercial>Empresa Importadora y Exportadora de Piezas</nombreComercial>
+	<ruc>1792146739001</ruc> 
+	<claveAcceso>2110201101179214673900110020010000000011234567813</claveAcceso>  
+	<codDoc>01</codDoc>
+	<estab>002</estab>
+	<ptoEmi>001</ptoEmi>
+	<secuencial>000000001</secuencial> 
+	<dirMatriz>Enrique Guerrero Portilla OE1-34 AV. Galo Plaza Lasso</dirMatriz>  
+ </infoTributaria>
+ <infoFactura>
+	<fechaEmision>21/10/2012</fechaEmision> 
+	<dirEstablecimiento>Sebastián Moreno S/N Francisco García</dirEstablecimiento> 
+	<contribuyenteEspecial>5368</contribuyenteEspecial> 
+	<obligadoContabilidad>SI</obligadoContabilidad> 
+	<tipoIdentificacionComprador>04</tipoIdentificacionComprador> 
+	<guiaRemision>001-001-000000001</guiaRemision>   
+	<razonSocialComprador>PRUEBAS SERVICIO DERENTAS INTERNAS</razonSocialComprador> 
+	<identificacionComprador>1713328506001</identificacionComprador> 
+	<totalSinImpuestos>295000.00</totalSinImpuestos> 
+	<totalDescuento>5000.00</totalDescuento> 
+	<totalConImpuestos> 
+		<totalImpuesto> 
+			<codigo>3</codigo> 
+			<codigoPorcentaje>3072</codigoPorcentaje>
+			<baseImponible>295000.00</baseImponible> 			
+			<valor>14750.00</valor> 
+		</totalImpuesto>
+		<totalImpuesto> 
+			<codigo>2</codigo> 
+			<codigoPorcentaje>2</codigoPorcentaje>
+			<baseImponible>309750.00</baseImponible>
+			<valor>37170.00</valor> 
+		</totalImpuesto>
+   	</totalConImpuestos>
+   	<propina>0.00</propina>
+    <importeTotal>346920.00</importeTotal>
+   <moneda>DOLAR</moneda>
+ </infoFactura> 
+ <detalles>
+     <detalle>
+		<codigoPrincipal>125BJC-01</codigoPrincipal>
+   		<codigoAuxiliar>1234D56789-A</codigoAuxiliar>
+   		<descripcion>CAMIONETA 4X4 DIESEL 3.7</descripcion>
+   		<cantidad>10.00</cantidad>
+   		<precioUnitario>300000.00</precioUnitario>
+   		<descuento>5000.00</descuento>
+   		<precioTotalSinImpuesto>295000.00</precioTotalSinImpuesto>
+   		<detallesAdicionales>
+			<detAdicional nombre="Marca Chevrolet" valor="Chevrolet"/>
+   		    <detAdicional nombre="Modelo " valor="2012"/>
+			<detAdicional nombre="Chasis" valor="8LDETA03V20003289"/>
+   		</detallesAdicionales>    
+   		<impuestos>
+    		<impuesto>
+     			<codigo>3</codigo>
+     			<codigoPorcentaje>3072</codigoPorcentaje>
+     			<tarifa>5</tarifa>
+     			<baseImponible>295000.00</baseImponible> 
+     			<valor>14750.00</valor> 
+		    </impuesto>
+		    <impuesto>
+     			<codigo>2</codigo>
+     			<codigoPorcentaje>2</codigoPorcentaje>
+     			<tarifa>12</tarifa>
+     			<baseImponible>309750.00</baseImponible>  
+     			<valor>37170.00</valor>  
+		    </impuesto>
+   		</impuestos>
+  		</detalle>
+ 		</detalles>
+ 		<infoAdicional>
+    		<campoAdicional nombre="Codigo Impuesto ISD">4580</campoAdicional> 
+   			<campoAdicional nombre="Impuesto ISD">15.42x</campoAdicional>   			
+  		</infoAdicional>
+</factura>

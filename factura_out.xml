@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><factura id="comprobante" version="1.0.0">
+ <infoTributaria>
+	<ambiente>1</ambiente>
+	<tipoEmision>1</tipoEmision>
+	<razonSocial>Distribuidora de Suministros Naciona S.A</razonSocial>
+	<nombreComercial>Empresa Importadora y Exportadora de Piezas</nombreComercial>
+	<ruc>1792146739001</ruc> 
+	<claveAcceso>2110201101179214673900110020010000000011234567813</claveAcceso>  
+	<codDoc>01</codDoc>
+	<estab>002</estab>
+	<ptoEmi>001</ptoEmi>
+	<secuencial>000000001</secuencial> 
+	<dirMatriz>Enrique Guerrero Portilla OE1-34 AV. Galo Plaza Lasso</dirMatriz>  
+ </infoTributaria>
+ <infoFactura>
+	<fechaEmision>21/10/2012</fechaEmision> 
+	<dirEstablecimiento>Sebastián Moreno S/N Francisco García</dirEstablecimiento> 
+	<contribuyenteEspecial>5368</contribuyenteEspecial> 
+	<obligadoContabilidad>SI</obligadoContabilidad> 
+	<tipoIdentificacionComprador>04</tipoIdentificacionComprador> 
+	<guiaRemision>001-001-000000001</guiaRemision>   
+	<razonSocialComprador>PRUEBAS SERVICIO DERENTAS INTERNAS</razonSocialComprador> 
+	<identificacionComprador>1713328506001</identificacionComprador> 
+	<totalSinImpuestos>295000.00</totalSinImpuestos> 
+	<totalDescuento>5000.00</totalDescuento> 
+	<totalConImpuestos> 
+		<totalImpuesto> 
+			<codigo>3</codigo> 
+			<codigoPorcentaje>3072</codigoPorcentaje>
+			<baseImponible>295000.00</baseImponible> 			
+			<valor>14750.00</valor> 
+		</totalImpuesto>
+		<totalImpuesto> 
+			<codigo>2</codigo> 
+			<codigoPorcentaje>2</codigoPorcentaje>
+			<baseImponible>309750.00</baseImponible>
+			<valor>37170.00</valor> 
+		</totalImpuesto>
+   	</totalConImpuestos>
+   	<propina>0.00</propina>
+    <importeTotal>346920.00</importeTotal>
+   <moneda>DOLAR</moneda>
+ </infoFactura> 
+ <detalles>
+     <detalle>
+		<codigoPrincipal>125BJC-01</codigoPrincipal>
+   		<codigoAuxiliar>1234D56789-A</codigoAuxiliar>
+   		<descripcion>CAMIONETA 4X4 DIESEL 3.7</descripcion>
+   		<cantidad>10.00</cantidad>
+   		<precioUnitario>300000.00</precioUnitario>
+   		<descuento>5000.00</descuento>
+   		<precioTotalSinImpuesto>295000.00</precioTotalSinImpuesto>
+   		<detallesAdicionales>
+			<detAdicional nombre="Marca Chevrolet" valor="Chevrolet"/>
+   		    <detAdicional nombre="Modelo " valor="2012"/>
+			<detAdicional nombre="Chasis" valor="8LDETA03V20003289"/>
+   		</detallesAdicionales>    
+   		<impuestos>
+    		<impuesto>
+     			<codigo>3</codigo>
+     			<codigoPorcentaje>3072</codigoPorcentaje>
+     			<tarifa>5</tarifa>
+     			<baseImponible>295000.00</baseImponible> 
+     			<valor>14750.00</valor> 
+		    </impuesto>
+		    <impuesto>
+     			<codigo>2</codigo>
+     			<codigoPorcentaje>2</codigoPorcentaje>
+     			<tarifa>12</tarifa>
+     			<baseImponible>309750.00</baseImponible>  
+     			<valor>37170.00</valor>  
+		    </impuesto>
+   		</impuestos>
+  		</detalle>
+ 		</detalles>
+ 		<infoAdicional>
+    		<campoAdicional nombre="Codigo Impuesto ISD">4580</campoAdicional> 
+   			<campoAdicional nombre="Impuesto ISD">15.42x</campoAdicional>   			
+  		</infoAdicional>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#" Id="Signature974427">
+<ds:SignedInfo Id="Signature-SignedInfo509254">
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference Id="SignedPropertiesID653823" Type="http://uri.etsi.org/01903#SignedProperties" URI="#Signature974427-SignedProperties507531">
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>zv46Rh918yOcNNN/A7RgBJSgoqA=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference URI="#Certificate1444036">
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>VZnB8TO8XDLo0CsCxvPBSQztXg4=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Id="Reference-ID-105940" URI="#comprobante">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>fRLwOoF5cf+O8IIKzyeXIdrt5Bw=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue Id="SignatureValue530489">
+Zcgji3CQkedyKwCVMGS0hXsMJbItGRM30fwZrVAXorCT6FghzvLe+bVaKlRugfh2bb91OyQi5qR9
+e3/LdHOaYtmEbDRv5yC/zEpj6CjTbsI0l7meYgROwxHa7dcPAgdWJ1eD+wldQGEIyN5QfQ1gZMq+
+DTzSOUy6EDyuNlwp/1Y=
+</ds:SignatureValue>
+<ds:KeyInfo Id="Certificate1444036">
+<ds:X509Data>
+<ds:X509Certificate>
+MIIDvzCCAyigAwIBAgICAKEwDQYJKoZIhvcNAQEFBQAwcjELMAkGA1UEBhMCRVMxDzANBgNVBAgT
+Bk1hZHJpZDEPMA0GA1UEBxMGTWFkcmlkMQ4wDAYDVQQKEwVNSVR5QzEbMBkGA1UECxMSTUlUeUMg
+RE5JZSBQcnVlYmFzMRQwEgYDVQQDEwtDQSB1c3VhcmlvczAeFw0xMDA0MDgxMjM4MjJaFw0yMDA0
+MDUxMjM4MjJaMHwxCzAJBgNVBAYTAkVTMQ8wDQYDVQQIEwZNYWRyaWQxDzANBgNVBAcTBk1hZHJp
+ZDEOMAwGA1UEChMFTUlUeUMxGzAZBgNVBAsTEk1JVHlDIEROSWUgUHJ1ZWJhczEeMBwGA1UEAxMV
+VXN1YXJpbyBkZSBwcnVlYmFzIDYxMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2ehoLcO6l
+XWmKzJfdz2m+vRZmGeDo5OF+Q8MNdVtL8AKbMykP6G9JOzBT3WLhzQKszMg43DQjViN6mTQsPLYC
+fe/n6LmTWZkRvsIzrffMaL7goy47VCX1CeUQ80cuUAHJpRq7UMObNvgV/8rn+zPfYmErqZVhAckl
+eP4/RgeC9QIDAQABo4IBWDCCAVQwCQYDVR0TBAIwADALBgNVHQ8EBAMCBeAwHQYDVR0OBBYEFNhw
+w+tqmd7gvdedMv0Gk1mEolYdMIGYBgNVHSMEgZAwgY2AFPWhaqh3T1uxBIynfkjxDp/Fdo8boXKk
+cDBuMQ8wDQYDVQQIEwZNYWRyaWQxDzANBgNVBAcTBk1hZHJpZDEOMAwGA1UEChMFTUlUeUMxGzAZ
+BgNVBAsTEk1JVHlDIEROSWUgUHJ1ZWJhczEQMA4GA1UEAxMHUm9vdCBDQTELMAkGA1UEBhMCRVOC
+AQMwCQYDVR0RBAIwADA2BgNVHRIELzAthitodHRwOi8vbWluaXN0ZXItOGpneHk5Lm1pdHljLmFn
+ZS9QS0kvQ0EuY3J0MD0GA1UdHwQ2MDQwMqAwoC6GLGh0dHA6Ly9taW5pc3Rlci04amd4eTkubWl0
+eWMuYWdlL1BLSS9jcmwuY3JsMA0GCSqGSIb3DQEBBQUAA4GBADn3vfsgfhyreHhn4VCG4WuG+g5q
+TRKpu72ZScMbyY+e3d2m6fOSMkoEC+NwaXgl4Y/vKlXGKgdhYjLDWjobRDVQOQRQ4Q/Wv/aPPno1
+CjBkYdY5rnCM/oiy8QXNjdboXRiE40kCyqj7jiopB20uO2a0yacC5ooWQz1pqZEhSWRD
+</ds:X509Certificate>
+</ds:X509Data>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+tnoaC3DupV1pisyX3c9pvr0WZhng6OThfkPDDXVbS/ACmzMpD+hvSTswU91i4c0CrMzIONw0I1Yj
+epk0LDy2An3v5+i5k1mZEb7CM633zGi+4KMuO1Ql9QnlEPNHLlAByaUau1DDmzb4Ff/K5/sz32Jh
+K6mVYQHJJXj+P0YHgvU=
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+</ds:KeyInfo>
+<ds:Object Id="Signature974427-Object200185"><etsi:QualifyingProperties Target="#Signature974427"><etsi:SignedProperties Id="Signature974427-SignedProperties507531"><etsi:SignedSignatureProperties><etsi:SigningTime>2014-07-31T11:39:56-03:00</etsi:SigningTime><etsi:SigningCertificate><etsi:Cert><etsi:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>3+JZSMCKF3YCSOhGFNiEpBEKvPY=</ds:DigestValue></etsi:CertDigest><etsi:IssuerSerial><ds:X509IssuerName>CN=CA usuarios,OU=MITyC DNIe Pruebas,O=MITyC,L=Madrid,ST=Madrid,C=ES</ds:X509IssuerName><ds:X509SerialNumber>161</ds:X509SerialNumber></etsi:IssuerSerial></etsi:Cert></etsi:SigningCertificate></etsi:SignedSignatureProperties><etsi:SignedDataObjectProperties><etsi:DataObjectFormat ObjectReference="#Reference-ID-105940"><etsi:Description>contenido comprobante</etsi:Description><etsi:MimeType>text/xml</etsi:MimeType></etsi:DataObjectFormat></etsi:SignedDataObjectProperties></etsi:SignedProperties></etsi:QualifyingProperties></ds:Object></ds:Signature></factura>
