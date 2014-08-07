@@ -14,15 +14,15 @@ import ar.com.estigiait.ds.server.model.IncrementResponse;
  * @author Emilio Watemberg <emilio.watemberg@estigiait.com.ar>
  * 
  */
-public class IncrementRoute extends RouteBuilder {
+public class SignatureRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
         JaxbDataFormat jaxb = new JaxbDataFormat(IncrementRequest.class.getPackage().getName());
         
-        from("spring-ws:rootqname:{http://softtek.com/ws}incrementRequest?endpointMapping=#endpointMappingIncrement")
+        from("spring-ws:rootqname:{http://softtek.com/ws}facturaRequest?endpointMapping=#endpointMappingFactura")
             .unmarshal(jaxb)
-            .process(new IncrementProcessor())
+            //.process(new IncrementProcessor())
             .marshal(jaxb);
     }
     

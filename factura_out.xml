@@ -77,19 +77,19 @@
     		<campoAdicional nombre="Codigo Impuesto ISD">4580</campoAdicional> 
    			<campoAdicional nombre="Impuesto ISD">15.42x</campoAdicional>   			
   		</infoAdicional>
-<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#" Id="Signature974427">
-<ds:SignedInfo Id="Signature-SignedInfo509254">
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#" Id="Signature68449">
+<ds:SignedInfo Id="Signature-SignedInfo513060">
 <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
 <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-<ds:Reference Id="SignedPropertiesID653823" Type="http://uri.etsi.org/01903#SignedProperties" URI="#Signature974427-SignedProperties507531">
+<ds:Reference Id="SignedPropertiesID632316" Type="http://uri.etsi.org/01903#SignedProperties" URI="#Signature68449-SignedProperties923819">
 <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-<ds:DigestValue>zv46Rh918yOcNNN/A7RgBJSgoqA=</ds:DigestValue>
+<ds:DigestValue>o71K1YjCGf2D9wo8TWvJB2lBp8A=</ds:DigestValue>
 </ds:Reference>
-<ds:Reference URI="#Certificate1444036">
+<ds:Reference URI="#Certificate1575232">
 <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-<ds:DigestValue>VZnB8TO8XDLo0CsCxvPBSQztXg4=</ds:DigestValue>
+<ds:DigestValue>1oNzDw0mgi7yFi6uXTcPo0sjerQ=</ds:DigestValue>
 </ds:Reference>
-<ds:Reference Id="Reference-ID-105940" URI="#comprobante">
+<ds:Reference Id="Reference-ID-79097" URI="#comprobante">
 <ds:Transforms>
 <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
 </ds:Transforms>
@@ -97,12 +97,12 @@
 <ds:DigestValue>fRLwOoF5cf+O8IIKzyeXIdrt5Bw=</ds:DigestValue>
 </ds:Reference>
 </ds:SignedInfo>
-<ds:SignatureValue Id="SignatureValue530489">
-Zcgji3CQkedyKwCVMGS0hXsMJbItGRM30fwZrVAXorCT6FghzvLe+bVaKlRugfh2bb91OyQi5qR9
-e3/LdHOaYtmEbDRv5yC/zEpj6CjTbsI0l7meYgROwxHa7dcPAgdWJ1eD+wldQGEIyN5QfQ1gZMq+
-DTzSOUy6EDyuNlwp/1Y=
+<ds:SignatureValue Id="SignatureValue641563">
+G7pU68MYQAw+KjpEWFasrEdIIwaozgPHWBX4/Iq3gh77gscaLhfWuj7z0ou6XZGQT94EHaMsxjaN
+vjCbzGYYdrXCZJRIbeXPbtqhm6smIo+5dKcV91kIuZBadURNG4RKeuJYh/VeiXcV34dmx3ZMQxDY
+KXfk4BVyMzKdwojmWoI=
 </ds:SignatureValue>
-<ds:KeyInfo Id="Certificate1444036">
+<ds:KeyInfo Id="Certificate1575232">
 <ds:X509Data>
 <ds:X509Certificate>
 MIIDvzCCAyigAwIBAgICAKEwDQYJKoZIhvcNAQEFBQAwcjELMAkGA1UEBhMCRVMxDzANBgNVBAgT
@@ -135,4 +135,4 @@ K6mVYQHJJXj+P0YHgvU=
 </ds:RSAKeyValue>
 </ds:KeyValue>
 </ds:KeyInfo>
-<ds:Object Id="Signature974427-Object200185"><etsi:QualifyingProperties Target="#Signature974427"><etsi:SignedProperties Id="Signature974427-SignedProperties507531"><etsi:SignedSignatureProperties><etsi:SigningTime>2014-07-31T11:39:56-03:00</etsi:SigningTime><etsi:SigningCertificate><etsi:Cert><etsi:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>3+JZSMCKF3YCSOhGFNiEpBEKvPY=</ds:DigestValue></etsi:CertDigest><etsi:IssuerSerial><ds:X509IssuerName>CN=CA usuarios,OU=MITyC DNIe Pruebas,O=MITyC,L=Madrid,ST=Madrid,C=ES</ds:X509IssuerName><ds:X509SerialNumber>161</ds:X509SerialNumber></etsi:IssuerSerial></etsi:Cert></etsi:SigningCertificate></etsi:SignedSignatureProperties><etsi:SignedDataObjectProperties><etsi:DataObjectFormat ObjectReference="#Reference-ID-105940"><etsi:Description>contenido comprobante</etsi:Description><etsi:MimeType>text/xml</etsi:MimeType></etsi:DataObjectFormat></etsi:SignedDataObjectProperties></etsi:SignedProperties></etsi:QualifyingProperties></ds:Object></ds:Signature></factura>
+<ds:Object Id="Signature68449-Object785136"><etsi:QualifyingProperties Target="#Signature68449"><etsi:SignedProperties Id="Signature68449-SignedProperties923819"><etsi:SignedSignatureProperties><etsi:SigningTime>2014-08-06T18:27:14-03:00</etsi:SigningTime><etsi:SigningCertificate><etsi:Cert><etsi:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>3+JZSMCKF3YCSOhGFNiEpBEKvPY=</ds:DigestValue></etsi:CertDigest><etsi:IssuerSerial><ds:X509IssuerName>CN=CA usuarios,OU=MITyC DNIe Pruebas,O=MITyC,L=Madrid,ST=Madrid,C=ES</ds:X509IssuerName><ds:X509SerialNumber>161</ds:X509SerialNumber></etsi:IssuerSerial></etsi:Cert></etsi:SigningCertificate></etsi:SignedSignatureProperties><etsi:SignedDataObjectProperties><etsi:DataObjectFormat ObjectReference="#Reference-ID-79097"><etsi:Description>contenido comprobante</etsi:Description><etsi:MimeType>text/xml</etsi:MimeType></etsi:DataObjectFormat></etsi:SignedDataObjectProperties></etsi:SignedProperties></etsi:QualifyingProperties></ds:Object></ds:Signature></factura>

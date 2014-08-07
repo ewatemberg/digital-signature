@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema attributeFormDefault="qualified" elementFormDefault="qualified"
+	targetNamespace="http://camel.apache.org/example/increment" xmlns="http://www.w3.org/2001/XMLSchema">
+	<element name="incrementRequest">
+		<complexType>
+			<sequence>
+				<element name="input" type="integer" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="incrementResponse">
+		<complexType>
+			<sequence>
+				<element name="result" type="integer" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>
