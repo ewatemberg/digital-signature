@@ -1,17 +1,17 @@
 package ar.com.estigiait.ds.server;
 
-import java.io.File;
-
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.properties.PropertiesComponent;
 
-import ar.com.estigiait.ds.server.model.IncrementRequest;
-import ar.com.estigiait.ds.server.model.IncrementResponse;
+import ar.com.estigiait.ds.signature.XadesBesSignature;
 
 /**
- * Server route
+ * Ftp route permite poolear un ftp {@code ftp.origin},
+ * transformar el contenido de este archivo agregando
+ * su firma digital y guardarlo en otro ftp {@code ftp.destiny}  
+ * 
  */
 public class FtpRoute extends RouteBuilder {
 
@@ -20,6 +20,9 @@ public class FtpRoute extends RouteBuilder {
         // configure properties component
         PropertiesComponent pc = getContext().getComponent("properties", PropertiesComponent.class);
         pc.setLocation("classpath:ftp.properties");
+        
+//        PropertiesComponent pcds = getContext().getComponent("properties", PropertiesComponent.class);
+//        pcds.setLocation("conf-signature.properties");
 
         // lets shutdown faster in case of in-flight messages stack up
         getContext().getShutdownStrategy().setTimeout(10);
@@ -31,26 +34,24 @@ public class FtpRoute extends RouteBuilder {
 
         // use system out so it stand out
         System.out.println("*********************************************************************************");
-        System.out.println("This app will route files from the FTP server: "
-                + getContext().resolvePropertyPlaceholders("{{ftp.origin}}") + " to FTP server: " + getContext().resolvePropertyPlaceholders("{{ftp.origin}}"));
-        System.out.println("You can configure the location of the ftp server in the src/main/resources/ftp.properties file.");
+        System.out.println("Este proceso rutea archivos desde el servidor FTP: "
+                + getContext().resolvePropertyPlaceholders("{{ftp.origin}}") + " al sevidor FTP: " + getContext().resolvePropertyPlaceholders("{{ftp.destiny}}"));
+        System.out.println("Usted puede configurar la locacion del ftp server desde el archivo src/main/resources/ftp.properties.");
         System.out.println("*********************************************************************************");
     }
     
     
     /**
-     * 
+     * Proceso que permite transformar el contenido 
+     * del archivo pooleado, agregando su firma
+     * digital.
      *
      */
     private static final class SignatureProcessor implements Processor {
         public void process(Exchange exchange) throws Exception {
             String body = exchange.getIn().getBody(String.class);
-            
-            //TODO: acomodar
-            //IncrementResponse response = new IncrementResponse();
-            //int result = request.getInput() + 1; // increment input value
-            //response.setResult(result); 
-            exchange.getOut().setBody(response);
+            exchange.getOut().setHeader("CamelFileName", exchange.getIn().getHeader("CamelFileName") );
+            exchange.getOut().setBody(XadesBesSignature.firmar(body,FtpRoute.class.getResource("/usr0061.p12").getPath(), "usr0061"));
         }
     }
 }

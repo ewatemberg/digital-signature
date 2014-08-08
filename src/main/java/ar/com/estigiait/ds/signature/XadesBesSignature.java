@@ -6,6 +6,7 @@ import es.mityc.firmaJava.libreria.xades.DataToSign;
 import es.mityc.firmaJava.libreria.xades.XAdESSchemas;
 import es.mityc.javasign.xml.refs.InternObjectToSign;
 import es.mityc.javasign.xml.refs.ObjectToSign;
+import ar.com.estigiait.ds.tool.Util;
 
 /**
  * Esta clase define los datos de accesos a las operaciones de 
@@ -25,13 +26,28 @@ public class XadesBesSignature extends GenericXMLSignature{
     * Recurso a firmar
     * 
     */
-    private String fileToSign;
+    private String pathFileToSign;
+    
+    /**
+    * Archivo a firmar
+    * 
+    */
+    private Document fileToSign;
       
     /**
     * Fichero donde se desea guardar la firma
     * 
     */
-    public XadesBesSignature(String fileToSign) {
+    public XadesBesSignature(String pathFileToSign) {
+        super();
+        this.pathFileToSign = pathFileToSign;
+    }
+    
+    /**
+    * Fichero donde se desea guardar la firma
+    * 
+    */
+    public XadesBesSignature(Document fileToSign) {
         super();
         this.fileToSign = fileToSign;
     }
@@ -54,8 +70,8 @@ public class XadesBesSignature extends GenericXMLSignature{
        * 			Nombre del archivo modificado con la firma.
        *            
        */
-    public static void firmar(String xmlPath,String pathSignature,String passSignature,String pathOut,String nameFileOut)
-    {               	
+     public static void firmar(String xmlPath,String pathSignature,String passSignature,String pathOut,String nameFileOut)
+     {               	
     	 XadesBesSignature signature = new XadesBesSignature(xmlPath);
 		 signature.setPassSignature(passSignature);
 		 signature.setPathSignature(pathSignature);
@@ -63,6 +79,29 @@ public class XadesBesSignature extends GenericXMLSignature{
 		 nameFile=nameFileOut;
           
          signature.execute();
+      }
+      
+     /**
+      * 
+      * Método que permite agregar la firma digital a un documento
+      * mediante el úso de un certificado específico
+      * utilizando el estandar XAdES-BES
+      * 
+      * @param xmlDocument
+      * 			Document resources a firmar.
+      * @param pathSignature
+      * 			Path perteneciente al certificado.
+      * @param passSignature
+      * 			Password del certificado a utilizar.
+      *            
+      */
+     public static Document firmar(String xmlDocument,String pathSignature,String passSignature)
+     {               	
+    	 XadesBesSignature signature = new XadesBesSignature(Util.getDocument(xmlDocument));
+		 signature.setPassSignature(passSignature);
+		 signature.setPathSignature(pathSignature);
+          
+         return signature.getSignedFile();
       }
       
       
@@ -79,7 +118,13 @@ public class XadesBesSignature extends GenericXMLSignature{
           datosAFirmar.addObject(new ObjectToSign(new InternObjectToSign("comprobante"), "contenido comprobante", null, "text/xml", null));
           datosAFirmar.setParentSignNode("comprobante");
 
-          Document docToSign = getDocument(fileToSign);
+          Document docToSign; 
+          //verificamos si lo que tenemos es un path o un Documento
+          if (pathFileToSign != null)
+        	  docToSign = getDocument(pathFileToSign);
+          else
+        	  docToSign = fileToSign;
+                    
           datosAFirmar.setDocument(docToSign);
 
           return datosAFirmar;

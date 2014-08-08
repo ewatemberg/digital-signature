@@ -152,6 +152,87 @@ public abstract class GenericXMLSignature {
     }
     
     /**
+     * La ejecución consistirá en la firma de los datos
+     * creados por el método abstracto {@code createDataToSign} mediante el
+     * certificado declarado en la constante {@code PKCS12_FILE}. El
+     * resultado del proceso de firma será almacenado en un fichero XML en el
+     * directorio correspondiente a la constante {@code OUTPUT_DIRECTORY}
+     * del usuario bajo el nombre devuelto por el método abstracto
+     * {@code getSignFileName}
+     * 
+     * @return Document
+     * 				archivo firmado.
+     */
+    protected Document getSignedFile() {
+     
+        // Obtencion del gestor de claves
+        KeyStore keyStore = getKeyStore();
+       
+        if(keyStore==null){
+            System.err.println("No se pudo obtener almacen de firma.");
+            return null;
+        }
+        String alias=getAlias(keyStore);
+       
+        // Obtencion del certificado para firmar. Utilizaremos el primer
+        // certificado del almacen.           
+        X509Certificate certificate = null;
+        try {
+            certificate = (X509Certificate)keyStore.getCertificate(alias);
+            if (certificate == null) {
+                System.err.println("No existe ningún certificado para firmar.");
+                return null;
+            }
+        } catch (KeyStoreException e1) {
+            e1.printStackTrace();
+        }
+     
+        // Obtención de la clave privada asociada al certificado
+        PrivateKey privateKey = null;
+        KeyStore tmpKs = keyStore;
+        try {
+            privateKey = (PrivateKey) tmpKs.getKey(alias, this.passSignature.toCharArray()); 
+        } catch (UnrecoverableKeyException e) {
+            System.err.println("No existe clave privada para firmar.");
+            e.printStackTrace();
+        } catch (KeyStoreException e) {
+            System.err.println("No existe clave privada para firmar.");
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            System.err.println("No existe clave privada para firmar.");
+            e.printStackTrace();
+        }
+     
+         // Obtención del provider encargado de las labores criptográficas
+         Provider provider = keyStore.getProvider();
+
+         /*
+          * Creación del objeto que contiene tanto los datos a firmar como la
+          * configuración del tipo de firma
+          */
+         DataToSign dataToSign = createDataToSign();
+
+         /*
+          * Creación del objeto encargado de realizar la firma
+          */
+         FirmaXML firma = new FirmaXML();
+
+         // Firmamos el documento
+         Document docSigned = null;
+         try {
+             Object[] res = firma.signFile(certificate, dataToSign, privateKey, provider);
+             docSigned = (Document) res[0];
+         } catch (Exception ex) {
+             System.err.println("Error realizando la firma");
+             ex.printStackTrace();
+             return null;
+         }
+    
+         return docSigned;
+    }
+    
+    
+    /**
      * Crea el objeto DataToSign que contiene toda la información de la firma
      * que se desea realizar. Todas las implementaciones deberán proporcionar
      * una implementación de este método

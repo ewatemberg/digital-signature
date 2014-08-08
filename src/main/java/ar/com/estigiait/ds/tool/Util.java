@@ -1,15 +1,25 @@
 package ar.com.estigiait.ds.tool;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
 /**
- * Esta clase contiene herramientas de distinta utilidad.
+ * Esta clase contiene herramientas para trabajar con strings.
  * 
  * @author Emilio Watemberg <emilio.watemberg@estigiait.com.ar>
  *
@@ -75,5 +85,43 @@ public class Util{
 		return prop;
 		
 	}
+	
+    /**
+     * Devuelve el Document correspondiente al
+     * resource pasado como parámetro
+     * 
+     * @param resource
+     *            El recurso que se desea obtener
+     * @return Document
+     * 			El Document asociado al resource
+     */
+    public static Document getDocument(String resource) {
+         Document doc = null;
+         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+         dbf.setNamespaceAware(true);
+         InputStream is = new ByteArrayInputStream(resource.getBytes(StandardCharsets.UTF_8));
+         try {
+            DocumentBuilder db = dbf.newDocumentBuilder();
+           
+            doc=db.parse(is);
+         } catch (ParserConfigurationException ex) {
+             System.err.println("Error al parsear el documento");
+             ex.printStackTrace();
+             System.exit(-1);
+         } catch (SAXException ex) {
+             System.err.println("Error al parsear el documento");
+             ex.printStackTrace();
+             System.exit(-1);
+         } catch (IOException ex) {
+             System.err.println("Error al parsear el documento");
+             ex.printStackTrace();
+             System.exit(-1);
+         } catch (IllegalArgumentException ex) {
+            System.err.println("Error al parsear el documento");
+             ex.printStackTrace();
+            System.exit(-1);
+         }
+         return doc;
+     }
 	
 }
